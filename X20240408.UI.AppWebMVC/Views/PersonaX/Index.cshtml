@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Crear</h1>
 
 <form asp-action="Index">
     <div class="row">
@@ -24,12 +24,8 @@
         </div>
     </div>
 </form>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
-    <thead>
+    <thead class="table-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.NombreX)
@@ -74,9 +70,9 @@
                 @Html.DisplayFor(modelItem => item.ComentarioX)
             </td>
             <td>
-                @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
-                @Html.ActionLink("Detalle", "Details", new { id=item.Id }) |
-                @Html.ActionLink("Eliminar", "Delete", new {  id=item.Id })
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" }) |
+                    @Html.ActionLink("Detalle", "Details", new { id = item.Id }, new { @class = "btn btn-success" }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
             </td>
         </tr>
 }
