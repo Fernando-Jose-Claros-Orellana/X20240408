@@ -9,27 +9,31 @@ namespace X20240408.EntidadesDeNegocio
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Required]
         [StringLength(60)]
+        [Required(ErrorMessage = "El nombre es requerido")]
         [Display(Name = "Nombre")]
         public string NombreX { get; set; }
 
-        [Required]
         [StringLength(60)]
+        [Required(ErrorMessage = "El apellido es requerido")]
         [Display(Name = "Apellido")]
         public string ApellidoX { get; set; }
-        [Required]
+        
         [Display(Name = "FechaNacimiento")]
+        [Required(ErrorMessage = "La fecha es requerida")]
         public DateTime FechaNacimientoX { get; set; }
-        [Required]
+        
         [Display(Name = "Sueldo")]
+        [Required(ErrorMessage = "El sueldo es requerido")]
         public decimal SueldoX {  get; set; }
-        [Required]
+       
         [Display(Name = "Estado")]
+        [Required(ErrorMessage = "El estado es requerido")]
         public int StatusX { get; set; }
-        [Required]
+        
         [StringLength(60)]
         [Display(Name = "Comentario")]
+        [Required(ErrorMessage = "El comentario es requerido")]
         public string ComentarioX {  get; set; }
 
     }
