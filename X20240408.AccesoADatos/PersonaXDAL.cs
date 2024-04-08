@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using X20240408.EntidadesDeNegocio;
 
 namespace X20240408.AccesoADatos
@@ -21,12 +22,12 @@ namespace X20240408.AccesoADatos
             var clienteData = await _appDbContext.PersonasX.FirstOrDefaultAsync(s => s.Id == personax.Id);
             if (clienteData != null)
             {
-                clienteData.Nombre = personax.NombreX;
-                clienteData.Apellido = personax.ApellidoX;
-                clienteData.FechaNacimiento = personax.FechaNacimientoX;
-                clienteData.Sueldo = personax.SueldoX;
-                clienteData.Status = personax.StatusX;
-                clienteData.Comentario = personax.ComentarioX;
+                clienteData.NombreX = personax.NombreX;
+                clienteData.ApellidoX = personax.ApellidoX;
+                clienteData.FechaNacimientoX = personax.FechaNacimientoX;
+                clienteData.SueldoX = personax.SueldoX;
+                clienteData.StatusX = personax.StatusX;
+                clienteData.ComentarioX = personax.ComentarioX;
                 _appDbContext.Update(clienteData);
             }
             return await _appDbContext.SaveChangesAsync();
@@ -57,7 +58,7 @@ namespace X20240408.AccesoADatos
             var query = _appDbContext.PersonasX.AsQueryable();
             if (!string.IsNullOrWhiteSpace(personaX.NombreX))
             {
-                query = query.Where(s => s.NombreX.Contains(personaX.NombreX));x
+                query = query.Where(s => s.NombreX.Contains(personaX.NombreX));
             }
             if (!string.IsNullOrWhiteSpace(personaX.ApellidoX))
             {
