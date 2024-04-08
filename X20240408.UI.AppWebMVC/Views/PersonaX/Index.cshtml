@@ -63,9 +63,16 @@
             <td>
                 @Html.DisplayFor(modelItem => item.SueldoX)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StatusX)
-            </td>
+                <td>
+                    @if (item.StatusX == 1)
+                    {
+                        @Html.Raw("Activo")
+                    }
+                    else
+                    {
+                        @Html.Raw("Inactivo")
+                    }
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ComentarioX)
             </td>

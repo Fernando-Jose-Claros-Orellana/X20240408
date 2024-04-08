@@ -30,8 +30,15 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.SueldoX)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SueldoX)
+        <dd class="col-sm-10">
+            @if (Model.StatusX == 1)
+            {
+                @Html.Raw("Activo")
+            }
+            else
+            {
+                @Html.Raw("Inactivo")
+            }
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.StatusX)
