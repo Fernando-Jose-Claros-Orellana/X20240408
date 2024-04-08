@@ -17,7 +17,7 @@ namespace X20240408.UI.AppWebMVC.Controllers
         public async Task<ActionResult> Index(PersonaX personaX)
         {
             var personas = await _personaXBL.Buscar(personaX);
-            return View();
+            return View(personas);
         }
 
         // GET: PersonaXController/Details/5
